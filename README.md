@@ -17,10 +17,11 @@ yarn add next@^12
 
 ---
 
-## 不要なファイルの削除
+## 不要なファイルの削除と src フォルダの追加
 
 - components, interfaces, utils ディレクトリを削除します。
 - pages 直下の IndexPage 関数のあるファイル以外を削除します。
+- src フォルダを作成し pages を src 内に移動させます。
 
 ---
 
@@ -38,7 +39,7 @@ npx tailwindcss init -p
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/pages/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
@@ -46,8 +47,8 @@ module.exports = {
 };
 ```
 
-3. styles フォルダを作成します<br>
-   そのフォルダ内に globals.css を作成し、編集します。
+3. src 内に styles フォルダを作成します<br>
+   styles 内に globals.css を作成し、編集します。
 
 ```css
 @tailwind base;
